@@ -5,6 +5,7 @@ public class Opera extends MusicalShow {
         super(title, duration, director, musicAuthor, librettoText); // Передаем параметры в конструктор Show
         this.choirSize = choirSize; // Инициализируем новое поле
     }
+
     @Override
     public void printActors() {
         System.out.println("Опера  - " + getTitle());

@@ -4,14 +4,15 @@ public class Person {
     private Sex gender;
 
     public Person(String surname, String name, Sex gender) {
-       this.name = name;
-       this.surname = surname;
-       this.gender = gender;
+        this.name = name;
+        this.surname = surname;
+        this.gender = gender;
     }
 
     public String getName() {
         return name;
     }
+
     public String getSurname() {
         return surname;
     }

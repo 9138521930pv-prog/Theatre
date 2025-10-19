@@ -7,11 +7,11 @@ public class MusicalShow extends Show {
         this.musicAuthor = musicAuthor; // Инициализируем новое поле
         this.librettoText = librettoText; // Инициализируем новое поле
     }
+
     public void printLibrettoText() {
         System.out.println("   Либретто спектакля  - " + this.getTitle());
         System.out.println("-----------------------------------------------");
         System.out.println(librettoText);
         System.out.println("-----------------------------------------------");
-
     }
 }

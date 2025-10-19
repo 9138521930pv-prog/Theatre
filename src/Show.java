@@ -13,18 +13,18 @@ public class Show {
         listOfActors = new ArrayList<>();
     }
 
-public int findActor(Actor actorToFind) {
-    for (int i = 0; i < listOfActors.size(); i++) {
-        if (listOfActors.get(i).equals(actorToFind)) {
-            return i;
+    public int findActor(Actor actorToFind) {
+        for (int i = 0; i < listOfActors.size(); i++) {
+            if (listOfActors.get(i).equals(actorToFind)) {
+                return i;
+            }
         }
+        return -1; // Возвращаем -1, если актёр не найден
     }
-    return -1; // Возвращаем -1, если актёр не найден
-}
 
     public int findActorBySurname(String surname) {
         for (int i = 0; i < listOfActors.size(); i++) {
-            if (listOfActors.get(i).getSurname().equals(surname))  {
+            if (listOfActors.get(i).getSurname().equals(surname)) {
                 return i;
             }
         }
