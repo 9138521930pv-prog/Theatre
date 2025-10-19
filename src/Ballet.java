@@ -5,6 +5,7 @@ public class Ballet extends MusicalShow {
         super(title, duration, director, musicAuthor, librettoText); // Передаем параметры в конструктор Show
         this.choreographer = choreographer; // Инициализируем новое поле
     }
+
     @Override
     public void printActors() {
         System.out.println("Балет  - " + getTitle());
