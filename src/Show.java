@@ -13,16 +13,7 @@ public class Show {
         listOfActors = new ArrayList<>();
     }
 
-    public int findActor(Actor actorToFind) {
-        for (int i = 0; i < listOfActors.size(); i++) {
-            if (listOfActors.get(i).equals(actorToFind)) {
-                return i;
-            }
-        }
-        return -1; // Возвращаем -1, если актёр не найден
-    }
-
-    public int findActorBySurname(String surname) {
+    public int findIndexByLastName(String surname) {
         for (int i = 0; i < listOfActors.size(); i++) {
             if (listOfActors.get(i).getSurname().equals(surname)) {
                 return i;
@@ -32,7 +23,7 @@ public class Show {
     }
 
     public void addActor(Actor actor) {
-        if (findActor(actor) == -1) {
+        if (!listOfActors.contains(actor)) {
             listOfActors.add(actor);
         } else {
             System.out.println("Актёр уже находится в списке.");
@@ -47,24 +38,10 @@ public class Show {
         return title;
     }
 
-    public void replaceActor(Actor oldActor, Actor newActor) {
-        int indexOld = findActor(oldActor);
-        int indexNew = findActor(newActor);
-        if (indexNew == -1) {
-            if (indexOld != -1) {
-                listOfActors.set(indexOld, newActor);
-            } else {
-                System.out.println("Актёр не найден в списке.");
-            }
-        } else {
-            System.out.println("Актёр уже находится в списке.");
-        }
-    }
-
     public void replaceActorBySurname(Actor newActor, String surnameToReplace) {
-        int indexOld = findActorBySurname(surnameToReplace);
-        int indexNew = findActor(newActor);
-        if (indexNew == -1) {
+        int indexOld = findIndexByLastName(surnameToReplace);
+
+        if (!listOfActors.contains(newActor)) {
             if (indexOld != -1) {
                 listOfActors.set(indexOld, newActor);
                 System.out.println("Актёр успешно заменён.");
@@ -74,6 +51,7 @@ public class Show {
         } else {
             System.out.println("Актёр уже находится в списке.");
         }
+
     }
 
     public void printActors() {
@@ -82,6 +60,10 @@ public class Show {
         for (Actor actor : listOfActors) {
             System.out.println("     " + actor);
         }
+    }
+
+    public void printDirectot() {
+        System.out.println("Режисер - " + director);
     }
 
 }

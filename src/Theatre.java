@@ -43,9 +43,10 @@ public class Theatre {
         opera.printActors();
         System.out.println("Попытка замена актера которого нет в списке актеров  оперы, меняем  Петрову на Гениева");
         opera.replaceActorBySurname(actor4, "Петрова");
+        System.out.println("");
         //Печать либретто оперы;
         opera.printLibrettoText();
         //Печать либретто балета;
-        ballet.printLibrettoText();
+        opera.printDirectot();
     }
 }

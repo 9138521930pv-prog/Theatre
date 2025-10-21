@@ -16,4 +16,9 @@ public class Person {
     public String getSurname() {
         return surname;
     }
+
+    @Override
+    public String toString() {
+        return surname + " " + name; // просто возвращаем поля класса
+    }
 }

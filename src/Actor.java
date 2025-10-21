@@ -1,13 +1,13 @@
 import java.util.Objects;
 public class Actor extends Person {
-    // Дополнительные поля для класса Actor
+
     private int height;
 
-    // Конструктор класса Actor
     public Actor(String name, String surname, Sex gender, int height) {
         super(name, surname, gender);
         this.height = height;
     }
+
     @Override // переопределяем toString
     public String toString() {
         return getSurname() + " " + getName() + " рост " + this.height; // просто возвращаем поля класса
@@ -27,5 +27,5 @@ public class Actor extends Person {
     public int hashCode() {
         return Objects.hash(getName(), getSurname(), this.height);
     }
-    // Методы класса Actor (если нужны)
+
 }
