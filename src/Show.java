@@ -13,15 +13,6 @@ public class Show {
         listOfActors = new ArrayList<>();
     }
 
-    public int findIndexByLastName(String surname) {
-        for (int i = 0; i < listOfActors.size(); i++) {
-            if (listOfActors.get(i).getSurname().equals(surname)) {
-                return i;
-            }
-        }
-        return -1; // Возвращаем -1, если актёр не найден
-    }
-
     public void addActor(Actor actor) {
         if (!listOfActors.contains(actor)) {
             listOfActors.add(actor);
@@ -39,19 +30,18 @@ public class Show {
     }
 
     public void replaceActorBySurname(Actor newActor, String surnameToReplace) {
-        int indexOld = findIndexByLastName(surnameToReplace);
-
         if (!listOfActors.contains(newActor)) {
-            if (indexOld != -1) {
-                listOfActors.set(indexOld, newActor);
-                System.out.println("Актёр успешно заменён.");
-            } else {
-                System.out.println("Актёр не найден в списке.");
+            for (int i = 0; i < listOfActors.size(); i++) {
+                if (listOfActors.get(i).getSurname().equals(surnameToReplace)) {
+                    listOfActors.set(i, newActor);
+                    System.out.println("Актёр успешно заменён.");
+                    return;
+                }
             }
+                System.out.println("Актёр не найден в списке.");
         } else {
             System.out.println("Актёр уже находится в списке.");
         }
-
     }
 
     public void printActors() {
